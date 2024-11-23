@@ -18,6 +18,7 @@ else {
     DEBUG_MESSAGE = release
 }
 console {
+    TARGET = dream-cli
     QT -= core gui
     UI_MESSAGE = console mode
     VERSION_MESSAGE = No Qt

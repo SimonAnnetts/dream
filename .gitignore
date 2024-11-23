@@ -10,7 +10,10 @@ dream.pro.user
 *.orig
 .qmake.stash
 dream
+dream-cli
 moc/
 obj/
 ui/
 qrc_icons.cpp
+moc_*.cpp
+moc_*.h
