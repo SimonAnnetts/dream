@@ -22,7 +22,8 @@ override_dh_auto_configure:
 
 override_dh_auto_build:
 	make
-	mv dream-cli /tmp
+	mkdir tmp
+	mv dream-cli tmp
 	qmake
 	make clean
 	make
@@ -30,7 +31,9 @@ override_dh_auto_build:
 
 override_dh_install:
 	dh_install
-	install /tmp/dream-cli debian/dream/usr/bin/dream-cli
+	install tmp/dream-cli debian/dream/usr/bin/dream-cli
+	rm tmp/dream-cli
+	rmdir tmp
 
 # dh_make generated override targets
 # This is example for Cmake (See https://bugs.debian.org/641051 )

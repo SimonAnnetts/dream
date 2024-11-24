@@ -1,3 +1,9 @@
+dream (2.2-3) unstable; urgency=medium
+
+  * Include console only version as well as the GUI version in the debian package build
+
+ -- Simon Annetts <simon@ateb.co.uk>  Sun, 24 Nov 2024 13:15:00 +0000
+
 dream (2.2-2) unstable; urgency=medium
 
   * xHE-AAC supported
