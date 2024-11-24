@@ -1,8 +1,8 @@
 #!/usr/bin/make -f
 # See debhelper(7) (uncomment to enable)
 # output every command that modifies files on the build system.
-#export DH_VERBOSE = 1
-
+export DH_VERBOSE = 1
+export DH_OPTIONS = -v
 
 # see FEATURE AREAS in dpkg-buildflags(1)
 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all
@@ -15,8 +15,22 @@
 
 
 %:
-	dh $@
+	dh $@ 
 
+override_dh_auto_configure:
+	qmake CONFIG+=console
+
+override_dh_auto_build:
+	make
+	mv dream-cli /tmp
+	qmake
+	make clean
+	make
+
+
+override_dh_install:
+	dh_install
+	install /tmp/dream-cli debian/dream/usr/bin/dream-cli
 
 # dh_make generated override targets
 # This is example for Cmake (See https://bugs.debian.org/641051 )

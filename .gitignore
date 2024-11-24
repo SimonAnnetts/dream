@@ -17,3 +17,4 @@ ui/
 qrc_icons.cpp
 moc_*.cpp
 moc_*.h
+dream.debhelper.log
